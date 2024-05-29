@@ -234,14 +234,17 @@ export class HomeComponent implements OnInit {
 
   public async generateRandom() {
     let types = [
-      'l4ytgx6wel8z725',
-      'whcqswtxo9mub34',
-      '6dn77w812459tru',
-      'lw2x9u4pu4qdzy8',
-      'l4ytgx6wel8z725',
-      '6dn77w812459tru',
-      'lw2x9u4pu4qdzy8',
-      '733je96mvx1j1ga',
+      '87m3rnkxlb2uffc',
+      'yp17corvovcv717',
+      '2w5kpcctfwqh9wm',
+      'nenyiuw0p6enwgi',
+      '1ph3gqmio67vxug',
+      '87m3rnkxlb2uffc',
+      'yp17corvovcv717',
+      '2w5kpcctfwqh9wm',
+      'nenyiuw0p6enwgi',
+      '1ph3gqmio67vxug',
+      'oue1s1a8m2p557h',
     ];
 
     let randomTransactions = [];
@@ -264,10 +267,10 @@ export class HomeComponent implements OnInit {
         date: newDate.toISOString().replace('T', ' ').replace('Z', ''),
         type: selectedType,
         value:
-          selectedType == '733je96mvx1j1ga'
+          selectedType == 'oue1s1a8m2p557h'
             ? parseFloat((Math.random() * (400 - 100) + 100).toFixed(2))
             : parseFloat((Math.random() * (150 - 10) + 10).toFixed(2)),
-        account: 'fbmnb4jtsjm050k',
+        account: 'rm69hz8fbvqegmo',
       });
     }
 
@@ -276,21 +279,29 @@ export class HomeComponent implements OnInit {
     for (let i = 1; i <= 12; i++) {
       let salaryPersonalTransaction = {
         date: `2024-${i.toString().padStart(2, '0')}-05 00:00:00`,
-        type: 'jsfp2brg066711u',
-        value: 1431.64,
-        account: 'fbmnb4jtsjm050k',
+        type: 'q0tancvw26s70fa',
+        value: 3431.64,
+        account: 'rm69hz8fbvqegmo',
       };
 
       let salarySavingsTransaction = {
         date: `2024-${i.toString().padStart(2, '0')}-05 00:00:00`,
-        type: 'jsfp2brg066711u',
+        type: 'q0tancvw26s70fa',
         value: 1000.0,
-        account: 'vojbk34sf7y62mx',
+        account: 'je0k5toqbgybtdb',
+      };
+
+      let foodCardTransaction = {
+        date: `2024-${i.toString().padStart(2, '0')}-05 00:00:00`,
+        type: 'q0tancvw26s70fa',
+        value: 300.0,
+        account: 'epubomk8b82akaj',
       };
 
       randomTransactions.push(
         salaryPersonalTransaction,
-        salarySavingsTransaction
+        salarySavingsTransaction,
+        foodCardTransaction
       );
 
       aux.push(salaryPersonalTransaction, salarySavingsTransaction);

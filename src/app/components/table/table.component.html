@@ -1,0 +1,45 @@
+<div style="height: 100%; display: grid; grid-template-rows: 1fr 0.1fr">
+  <div class="table-content shadow" [ngStyle]="gridData">
+    @for (column of columnData; track $index) {
+    <div class="cell header" (click)="sortByColumn($index)">
+      {{ column.header }}
+
+      <fa-icon
+        *ngIf="$index == sortIndex && sortDirection === 1"
+        [icon]="icons.arrowUp"
+      >
+      </fa-icon>
+
+      <fa-icon
+        *ngIf="$index == sortIndex && sortDirection === -1"
+        [icon]="icons.arrowDown"
+      >
+      </fa-icon>
+    </div>
+    }
+
+    <div
+      *ngIf="displayData.length === 0"
+      style="display: flex; align-items: center; justify-content: center"
+      [ngStyle]="{ 'grid-area': '2 / 1 / 2 / ' + columnData.length + 1 }"
+    >
+      <span> No items to display :(</span>
+    </div>
+
+    @for (row of displayData; track $index) { @for (cell of row; track $index) {
+    <span class="cell">{{ cell }}</span>
+    } }
+  </div>
+
+  <div class="table-btn-wrapper">
+    <button class="btn btn-round btn-outline-info" (click)="setPage(page - 1)">
+      <fa-icon [icon]="icons.arrowLeft"></fa-icon>
+    </button>
+    <button class="btn btn-round btn-outline-info" (click)="setPage(1)">
+      <span>{{ page }}</span>
+    </button>
+    <button class="btn btn-round btn-outline-info" (click)="setPage(page + 1)">
+      <fa-icon [icon]="icons.arrowRight"></fa-icon>
+    </button>
+  </div>
+</div>

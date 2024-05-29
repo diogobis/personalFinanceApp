@@ -10,6 +10,7 @@
   box-sizing: border-box;
 
   background-color: rgb(250, 250, 250);
+  background-color: rgb(67, 67, 255);
 }
 
 .userinfo {
@@ -61,5 +62,6 @@
 }
 
 .active-route {
-  border: 2px solid rgb(41, 41, 41);
+  border-radius: 0;
+  border-bottom: 2px solid rgb(41, 41, 41);
 }

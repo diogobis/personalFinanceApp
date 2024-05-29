@@ -1,3 +1,6 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
 .parent {
   display: grid;
   /* grid-template-columns: repeat(4, 1fr);
@@ -44,17 +47,6 @@
   gap: 24px;
 }
 
-.filter-wrapper select,
-.filter-wrapper input {
-  align-self: center;
-  border-radius: 8px;
-  padding: 6px 12px;
-  box-sizing: border-box;
-
-  border: none;
-  outline: none;
-}
-
 .filter-btn-wrapper {
   display: flex;
   align-items: center;
@@ -65,4 +57,3 @@
 .filter-btn {
   flex-grow: 1;
 }
-

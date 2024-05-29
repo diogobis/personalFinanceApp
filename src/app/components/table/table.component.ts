@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { TransactionService } from '../../services/transaction/transaction.service';
 import { TableColumnData } from '../../interfaces/table-column-data';
 import { CommonModule, DatePipe, DecimalPipe } from '@angular/common';
@@ -34,6 +41,7 @@ export class TableComponent implements AfterViewInit {
   displayData: any = [];
   page: number = 1;
   perPage: number = 25;
+  maxPage: number = 9999;
 
   gridData: any = {};
 
@@ -70,6 +78,7 @@ export class TableComponent implements AfterViewInit {
     }
 
     this.data = await this.service.getPaginated(this.page, this.perPage, query);
+    this.maxPage = this.data.totalPages;
     this.data = this.data.items;
 
     this.gridData['grid-template-columns'] = '';
@@ -116,7 +125,7 @@ export class TableComponent implements AfterViewInit {
   }
 
   public async setPage(newPage: number) {
-    if (newPage < 1) return;
+    if (newPage < 1 || newPage > this.maxPage) return;
 
     this.page = newPage;
     this.search();

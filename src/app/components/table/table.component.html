@@ -1,16 +1,22 @@
 <div style="height: 100%; display: grid; grid-template-rows: 1fr 0.1fr">
   <div class="table-content shadow" [ngStyle]="gridData">
     @for (column of columnData; track $index) {
-    <div class="cell header" (click)="sortByColumn($index)">
+    <div
+      class="cell header"
+      (click)="sortByColumn($index)"
+      *ngIf="displayData.length !== 0"
+    >
       {{ column.header }}
 
       <fa-icon
+        style="font-size: 12px !important"
         *ngIf="$index == sortIndex && sortDirection === 1"
         [icon]="icons.arrowUp"
       >
       </fa-icon>
 
       <fa-icon
+        style="font-size: 12px !important"
         *ngIf="$index == sortIndex && sortDirection === -1"
         [icon]="icons.arrowDown"
       >
@@ -32,13 +38,52 @@
   </div>
 
   <div class="table-btn-wrapper">
-    <button class="btn btn-round btn-outline-info" (click)="setPage(page - 1)">
+    <button
+      class="btn btn-round btn-outline-info no-padding"
+      (click)="setPage(page - 1)"
+    >
       <fa-icon [icon]="icons.arrowLeft"></fa-icon>
     </button>
-    <button class="btn btn-round btn-outline-info" (click)="setPage(1)">
+
+    <button
+      *ngIf="page > 2"
+      class="btn btn-round btn-outline-info no-padding"
+      (click)="setPage(page - 2)"
+    >
+      <span>{{ page - 2 }}</span>
+    </button>
+
+    <button
+      *ngIf="page > 1"
+      class="btn btn-round btn-outline-info no-padding"
+      (click)="setPage(page - 1)"
+    >
+      <span>{{ page - 1 }}</span>
+    </button>
+
+    <button class="btn btn-round btn-info no-padding" (click)="setPage(page)">
       <span>{{ page }}</span>
     </button>
-    <button class="btn btn-round btn-outline-info" (click)="setPage(page + 1)">
+
+    <button
+      *ngIf="page + 1 <= maxPage"
+      class="btn btn-round btn-outline-info no-padding"
+      (click)="setPage(page + 1)"
+    >
+      <span>{{ page + 1 }}</span>
+    </button>
+
+    <button
+      *ngIf="page + 2 <= maxPage"
+      class="btn btn-round btn-outline-info no-padding"
+      (click)="setPage(page + 2)"
+    >
+      <span>{{ page + 2 }}</span>
+    </button>
+    <button
+      class="btn btn-round btn-outline-info no-padding"
+      (click)="setPage(page + 1)"
+    >
       <fa-icon [icon]="icons.arrowRight"></fa-icon>
     </button>
   </div>

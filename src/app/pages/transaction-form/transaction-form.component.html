@@ -1,6 +1,75 @@
-<div class="body-warpper">
+<div class="body-wrapper">
   <div class="parent">
-    <div class="card shadow transaction-form"></div>
+    <div class="card shadow transaction-form grid grid-50-50">
+      <div class="form-group">
+        <label class="form-label" for="date">Date</label>
+        <input
+          type="datetime-local"
+          class="form-field shadow"
+          id="date"
+          name="date"
+          [(ngModel)]="transaction.date"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="value">Value</label>
+        <input
+          type="text"
+          class="form-field shadow"
+          id="value"
+          name="value"
+          style="text-align: right"
+          [(ngModel)]="displayValue"
+          (keyup)="formatValue()"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="form-label" for="account">Account</label>
+        <select
+          name="account"
+          id="account"
+          class="form-field shadow"
+          [(ngModel)]="transaction.account"
+          required
+        >
+          <option selected value="" disabled>Select your account</option>
+          <option *ngFor="let op of accountsOptions" [value]="op.value">
+            {{ op.label }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="form-label" for="account">Type</label>
+        <select
+          name="type"
+          id="type"
+          class="form-field shadow"
+          [(ngModel)]="transaction.type"
+          required
+        >
+          <option selected value="" disabled>Transaction type</option>
+          <option *ngFor="let op of typesOptions" [value]="op.value">
+            {{ op.label }}
+          </option>
+        </select>
+      </div>
+
+      <div></div>
+
+      <div class="form-group">
+        <button
+          class="btn filter-btn btn-outline-success shadow"
+          (click)="saveTransaction()"
+        >
+          Save
+        </button>
+      </div>
+    </div>
     <div class="card shadow transaction-table">
       <app-table
         [columnData]="[
@@ -20,13 +89,13 @@
         header: 'Value',
         key: 'value',
         format: 'value',
-        width: 25,
+        width: 20,
       },
       {
         header: 'Account',
         key: 'account',
         expand: 'name',
-        width: 15,
+        width: 20,
       },
     ]"
         [service]="transactionService"

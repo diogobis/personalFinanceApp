@@ -103,6 +103,9 @@ export class TableComponent implements AfterViewInit {
           case 'date':
             displayValue = this.datePipe.transform(displayValue, 'dd/MM/yyyy');
             break;
+          case 'boolean':
+            displayValue = displayValue ? 'Positive' : 'Negative';
+            break;
         }
 
         displayItem.push(displayValue);

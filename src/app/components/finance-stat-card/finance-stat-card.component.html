@@ -1,0 +1,9 @@
+<div class="finance-stats">
+  <div class="stat-info">
+    <span class="stat-title">{{ label }}</span>
+    <span class="stat-subtitle">{{ filterLabel }}</span>
+  </div>
+  <span class="stat-value" [classList]="'stat-value text-' + type"
+    >R${{ value | number : "1.2-2" }}</span
+  >
+</div>

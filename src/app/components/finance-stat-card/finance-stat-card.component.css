@@ -1,0 +1,44 @@
+.finance-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.stat-title {
+  font-size: 24px;
+  font-weight: 500;
+  justify-self: flex-start;
+}
+
+.stat-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 12px;
+  color: rgb(100, 100, 100);
+  justify-self: flex-start;
+}
+
+.stat-value {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  justify-self: flex-end;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-primary {
+  /* color: ; */
+}
+
+.text-danger {
+  color: #d9534f;
+}
+
+.text-success {
+  color: #5cb85c;
+}

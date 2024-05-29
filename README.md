@@ -1,27 +1,32 @@
-# PersonalFinanceFrotend
+<div align="center">
+  <h1>Personal Finance App</h1>
+</div>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+## Set-up
+This project was made using Node 20.13.1
 
-## Development server
+1. Download PocketBase
+Download [PocketBase](https://pocketbase.io/docs/) and place pocketbase.exe in a folder for your database. Then go into a folder in the terminal and type:
+```sh
+./pocketbase serve
+```
+2. Set-up collections
+Enter the Admin UI, create a admin user, go to Settings > Import Collections > Load from JSON file and upload [this file](https://github.com/ligeirin/personalFinanceFrotend/blob/master/pb_schema.json)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+3. Clone the repository
+```sh
+git clone https://github.com/ligeirin/personalFinanceFrotend/
+```
 
-## Code scaffolding
+4. Install packages
+Go to the repository's folder and run:
+```sh
+npm install
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+5. Run the application
+```sh
+npm run start
+```
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+6. Access [localhost:4200] to open the application

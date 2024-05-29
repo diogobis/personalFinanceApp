@@ -29,4 +29,4 @@ npm install
 npm run start
 ```
 
-6. Access [localhost:4200] to open the application
+6. Access [localhost:4200](localhost:4200) to open the application

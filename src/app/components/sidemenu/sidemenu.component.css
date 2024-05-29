@@ -1,0 +1,65 @@
+.sidemenu-wrapper {
+  width: 20vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  background-color: rgb(250, 250, 250);
+}
+
+.userinfo {
+  display: flex;
+  height: 65px;
+  flex-direction: row;
+  background-color: rgb(250, 250, 250);
+  align-items: center;
+  padding: 6px;
+  box-sizing: border-box;
+
+  border-radius: 12px;
+}
+
+.user-avatar {
+  border-radius: 50%;
+  margin-right: 12px;
+
+  max-height: 100%;
+  aspect-ratio: 1/1;
+}
+
+.user-name {
+  width: 70%;
+}
+
+.sidemenu-category-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  background-color: rgb(250, 250, 250);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.sidemenu-category-title {
+  font-weight: 600;
+}
+
+.sidemenu-link {
+  border-radius: 12px;
+  padding: 6px 12px;
+  color: rgb(41, 41, 41);
+  font-size: 18px;
+  height: 40px;
+  align-content: center;
+  box-sizing: border-box;
+}
+
+.active-route {
+  border: 2px solid rgb(41, 41, 41);
+}

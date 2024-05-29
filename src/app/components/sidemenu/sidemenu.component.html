@@ -1,0 +1,26 @@
+<section class="sidemenu-wrapper shadow">
+  <div class="userinfo-wrapper">
+    <div class="userinfo shadow">
+      <img
+        src="https://picsum.photos/50/50"
+        class="user-avatar"
+        alt="User Avatar"
+      />
+      <div class="user-name">
+        <span>John Doe</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidemenu-category-wrapper shadow" *ngFor="let category of routes">
+    <span class="sidemenu-category-title">{{ category.label }}</span>
+    <a
+      *ngFor="let item of category.links"
+      [routerLink]="item.path"
+      [routerLinkActive]="['active-route']"
+      class="sidemenu-link"
+    >
+      {{ item.label }}
+    </a>
+  </div>
+</section>

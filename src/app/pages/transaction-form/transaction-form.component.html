@@ -1,0 +1,36 @@
+<div class="body-warpper">
+  <div class="parent">
+    <div class="card shadow transaction-form"></div>
+    <div class="card shadow transaction-table">
+      <app-table
+        [columnData]="[
+      {
+        header: 'Date',
+        key: 'date',
+        format: 'date',
+        width: 20,
+      },
+      {
+        header: 'Type',
+        key: 'type',
+        expand: 'description',
+        width: 40,
+      },
+      {
+        header: 'Value',
+        key: 'value',
+        format: 'value',
+        width: 25,
+      },
+      {
+        header: 'Account',
+        key: 'account',
+        expand: 'name',
+        width: 15,
+      },
+    ]"
+        [service]="transactionService"
+      ></app-table>
+    </div>
+  </div>
+</div>

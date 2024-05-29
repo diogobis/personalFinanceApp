@@ -1,0 +1,28 @@
+.parent {
+  display: grid;
+  /* grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr); */
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  box-sizing: border-box;
+
+  height: 100%;
+}
+
+.body-warpper {
+  padding: 24px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.transaction-form {
+  grid-area: 1 / 1 / 1 / 4;
+}
+
+.transaction-table {
+  grid-area: 2 / 1 / 5 / 4;
+}

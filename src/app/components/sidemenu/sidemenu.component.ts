@@ -21,7 +21,7 @@ export class SidemenuComponent {
     {
       label: 'Settings',
       links: [
-        { path: 'types', label: 'Transaction Types' },
+        { path: 'transaction-type', label: 'Types' },
         { path: 'accounts', label: 'Accounts' },
       ],
     },

@@ -1,0 +1,45 @@
+<div class="body-wrapper">
+  <div class="parent">
+    <div class="card shadow transaction-form grid grid-70-30">
+      <div class="form-group account-description-wrapper">
+        <label class="form-label" for="description">Description</label>
+        <input
+          type="text"
+          class="form-field shadow"
+          id="description"
+          name="description"
+          required
+          autocomplete="off"
+          [(ngModel)]="account.name"
+        />
+      </div>
+      <div></div>
+      <div class="form-group" style="padding-top: 25px">
+        <button
+          class="btn filter-btn btn-outline-success shadow"
+          (click)="saveAccount()"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+    <div class="card shadow transaction-table">
+      <app-table
+        [columnData]="[
+          {
+            header: 'Account Name',
+            key: 'name',
+            width: 60,
+          },
+          {
+            header: 'Created at',
+            key: 'created',
+            width: 40,
+            format: 'date'
+          },
+        ]"
+        [service]="accountsService"
+      ></app-table>
+    </div>
+  </div>
+</div>

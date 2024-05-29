@@ -1,0 +1,11 @@
+.transaction-form {
+  grid-area: 1 / 1 / 1 / 4;
+}
+
+.transaction-table {
+  grid-area: 2 / 1 / 5 / 4;
+}
+
+.account-description-wrapper {
+  grid-area: 1 / 1 / 1 / 4;
+}

@@ -1,0 +1,95 @@
+<div class="body-warpper">
+  <div class="parent">
+    <div class="card div8 shadow filter-wrapper">
+      <span style="grid-area: 1 / 1 / 1 / 4">
+        Search
+        <fa-icon [icon]="icons.faMagnifyingGlass"></fa-icon>
+      </span>
+
+      <select
+        name=""
+        id=""
+        class="shadow"
+        [(ngModel)]="filter.account"
+        (change)="updateFilterLabel()"
+      >
+        <option selected value="">All accounts</option>
+        <option *ngFor="let op of accountsOptions" [value]="op.value">
+          {{ op.label }}
+        </option>
+      </select>
+      <input
+        type="date"
+        class="shadow"
+        name="dateStart"
+        id="dateStartInput"
+        placeholder="Start date"
+        [(ngModel)]="filter.startDate"
+        (change)="updateFilterLabel()"
+        [max]="filter.endDate"
+      />
+      <input
+        type="date"
+        class="shadow"
+        name="dateEnd"
+        id="dateEndInput"
+        placeholder="End date"
+        [(ngModel)]="filter.endDate"
+        (change)="updateFilterLabel()"
+        [min]="filter.startDate"
+      />
+      <div></div>
+      <div></div>
+      <div class="filter-btn-wrapper">
+        <button
+          class="btn filter-btn btn-outline-danger shadow"
+          (click)="reset()"
+        >
+          Clear
+        </button>
+        <!-- <button (click)="generateRandom()">RANDOM</button> -->
+        <!-- <button (click)="deleteAll()">DELETE</button> -->
+        <!-- <button (click)="getDateInterval()">INTERVAL</button> -->
+        <!-- <button
+          class="btn filter-btn btn-outline-info shadow"
+          (click)="prepareGraphs()"
+        >
+          Search
+        </button> -->
+      </div>
+    </div>
+    <app-finance-stat-card
+      class="card div1 shadow"
+      [label]="'Remaining'"
+      [filterLabel]="filterLabel"
+      [value]="remaining"
+      [type]="'primary'"
+    ></app-finance-stat-card>
+    <app-finance-stat-card
+      class="card div2 shadow"
+      [label]="'Income'"
+      [filterLabel]="filterLabel"
+      [value]="totalIncome"
+      [type]="'success'"
+    ></app-finance-stat-card>
+    <app-finance-stat-card
+      class="card div3 shadow"
+      [label]="'Expenses'"
+      [filterLabel]="filterLabel"
+      [value]="totalExpenses"
+      [type]="'danger'"
+    ></app-finance-stat-card>
+    <div
+      class="card div5 shadow"
+      echarts
+      [options]="pieGraphOptions"
+      [merge]="pieMergeOptions"
+    ></div>
+    <div
+      class="card div7 shadow"
+      echarts
+      [options]="lineGraphOptions"
+      [merge]="transactionChartMergeOptions"
+    ></div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+.transaction-form {
+  grid-area: 1 / 1 / 1 / 4;
+}
+
+.transaction-table {
+  grid-area: 2 / 1 / 5 / 4;
+}

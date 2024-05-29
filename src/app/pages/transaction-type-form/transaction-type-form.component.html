@@ -1,0 +1,63 @@
+<div class="body-wrapper">
+  <div class="parent">
+    <div class="card shadow transaction-form grid grid-70-30">
+      <div class="form-group">
+        <label class="form-label" for="description">Description</label>
+        <input
+          type="text"
+          class="form-field shadow"
+          id="description"
+          name="description"
+          required
+          [(ngModel)]="transactionType.description"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="slideThree">Add?</label>
+        <div class="slideThree shadow">
+          <input
+            type="checkbox"
+            value="None"
+            id="slideThree"
+            name="check"
+            checked
+            [(ngModel)]="transactionType.add"
+          />
+          <label for="slideThree"></label>
+        </div>
+      </div>
+
+      <div></div>
+
+      <div class="form-group">
+        <button
+          class="btn filter-btn btn-outline-success shadow"
+          (click)="saveTransactionType()"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+    <div class="card shadow transaction-table">
+      <app-table
+        [columnData]="[
+        {
+          header: 'Description',
+          key: 'description',
+          width: 70,
+        },
+        {
+          header: 'Add?',
+          key: 'add',
+          format: 'boolean',
+          width: 30,
+        },
+        
+      ]"
+        [service]="transactionTypeService"
+      ></app-table>
+    </div>
+  </div>
+</div>

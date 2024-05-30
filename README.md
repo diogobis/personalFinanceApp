@@ -2,7 +2,7 @@
   <h1>Personal Finance App</h1>
   <h3>A simple application for managing your finances</h3>
   <br>
-  <img src="https://github.com/ligeirin/personalFinanceFrotend/blob/master/assets/home.png" alt="Home page">
+  <img src="https://github.com/ligeirin/personalFinanceFrotend/blob/master/assets/home.PNG" alt="Home page">
 </div>
 
 ## Set-up

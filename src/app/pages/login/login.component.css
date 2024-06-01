@@ -1,0 +1,17 @@
+.login-form-wrapper {
+  width: 20vw;
+  height: fit-content;
+
+  margin: auto;
+  margin-top: 250px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: fit-content;
+
+  gap: 12px;
+}

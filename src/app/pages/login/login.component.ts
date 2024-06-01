@@ -14,7 +14,11 @@ export class LoginComponent {
   public username: string = '';
   public password: string = '';
 
-  constructor(private usersService: UsersService, private router: Router) {}
+  constructor(private usersService: UsersService, private router: Router) {
+    if (localStorage.getItem('pocketbase_auth')) {
+      this.router.navigate(['home']);
+    }
+  }
 
   public async login() {
     let result = await this.usersService

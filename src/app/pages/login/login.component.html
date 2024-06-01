@@ -1,8 +1,21 @@
-<input type="text" name="username" id="usernameInput" [(ngModel)]="username" />
-<input
-  type="password"
-  name="password"
-  id="passwordInput"
-  [(ngModel)]="password"
-/>
-<button (click)="login()">Login</button>
+<div class="login-form-wrapper">
+  <div class="card login-form shadow">
+    <input
+      type="text"
+      name="username"
+      id="usernameInput"
+      class="form-field shadow"
+      placeholder="Username"
+      [(ngModel)]="username"
+    />
+    <input
+      type="password"
+      name="password"
+      id="passwordInput"
+      class="form-field shadow"
+      placeholder="Password"
+      [(ngModel)]="password"
+    />
+    <button class="btn btn-outline-success" (click)="login()">Login</button>
+  </div>
+</div>

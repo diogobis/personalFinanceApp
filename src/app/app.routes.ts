@@ -6,6 +6,7 @@ import { TransactionTypeFormComponent } from './pages/transaction-type-form/tran
 import { AccountFormComponent } from './pages/account-form/account-form.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'transaction', component: TransactionFormComponent },
   { path: 'home', component: HomeComponent },

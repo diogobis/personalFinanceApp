@@ -1,13 +1,17 @@
-<section class="sidemenu-wrapper shadow">
+<section class="sidemenu-wrapper shadow" *ngIf="user !== null">
   <div class="userinfo-wrapper">
     <div class="userinfo shadow">
       <img
-        src="https://picsum.photos/50/50"
+        [src]="
+          user !== null
+            ? fileService.getFileUrl(user.model, user.model.avatar)
+            : '#'
+        "
         class="user-avatar"
         alt="User Avatar"
       />
       <div class="user-name">
-        <span>John Doe</span>
+        <span>{{ user.model.name }}</span>
       </div>
     </div>
   </div>
@@ -16,11 +20,15 @@
     <span class="sidemenu-category-title">{{ category.label }}</span>
     <a
       *ngFor="let item of category.links"
-      [routerLink]="item.path"
+      [routerLink]="'/' + item.path"
       [routerLinkActive]="['active-route']"
       class="sidemenu-link"
     >
       {{ item.label }}
     </a>
+  </div>
+
+  <div class="sidemenu-category-wrapper shadow">
+    <a class="sidemenu-link" (click)="logout()"> Sign out </a>
   </div>
 </section>

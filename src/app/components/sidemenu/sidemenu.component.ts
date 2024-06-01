@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
+import { FileService } from '../../services/file/file.service';
 
 @Component({
   selector: 'app-sidemenu',
@@ -25,9 +26,23 @@ export class SidemenuComponent {
         { path: 'accounts', label: 'Accounts' },
       ],
     },
-    {
-      label: 'Logout',
-      links: [{ path: 'login', label: 'Sign out' }],
-    },
   ];
+
+  public user;
+  constructor(private router: Router, public fileService: FileService) {
+    this.user = JSON.parse(localStorage.getItem('pocketbase_auth') as string);
+
+    this.router.events.subscribe((evt) => {
+      if (evt.type == 1) {
+        this.user = JSON.parse(
+          localStorage.getItem('pocketbase_auth') as string
+        );
+      }
+    });
+  }
+
+  public logout() {
+    localStorage.removeItem('pocketbase_auth');
+    this.router.navigate(['login']);
+  }
 }

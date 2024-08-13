@@ -16,11 +16,11 @@ Download [PocketBase](https://pocketbase.io/docs/) and place pocketbase.exe in a
 ```
   2. Set-up collections
 
-Enter the Admin UI, create a admin user, go to Settings > Import Collections > Load from JSON file and upload [this file](https://github.com/ligeirin/personalFinanceFrotend/blob/master/pb_schema.json)
+Enter the Admin UI, create a admin user, go to Settings > Import Collections > Load from JSON file and upload [this file](https://github.com/ligeirin/personalFinanceApp/blob/master/pb_schema.json)
 
 3. Clone the repository
 ```sh
-git clone https://github.com/ligeirin/personalFinanceFrotend/
+git clone https://github.com/ligeirin/personalFinanceApp/
 ```
 
   4. Install packages
